@@ -45,11 +45,11 @@ def booking(_id):
     return bson.json_util.dumps(doc)
 
 
-@app.route('/place/<_id>', methods=['GET'])
+@app.route('/rooms/<_id>', methods=['GET'])
 def place(_id):
     """Returns the document in the Places collection with the given ObjectID"""
 
-    doc = mongo.db.places.find_one_or_404({'_id': ObjectId(_id)})
+    doc = mongo.db.rooms.find_one_or_404({'_id': ObjectId(_id)})
 
     return bson.json_util.dumps(doc)
 
